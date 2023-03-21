@@ -1,0 +1,38 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/community
+    username: root
+    password: mysql
+    type: com.alibaba.druid.pool.DruidDataSource
+
+  thymeleaf:
+    cache: false
+
+  data:
+    redis:
+      database: 11
+      host: localhost
+      port: 6379
+  kafka:
+    bootstrap-servers: localhost:9092
+    consumer:
+      group-id: test-consumer-group
+      enable-auto-commit: true
+      auto-commit-interval: 3000
+
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.recialhot.domain
+  configuration:
+    use-generated-keys: true
+    map-underscore-to-camel-case: true
+server:
+  servlet:
+    context-path: /community
+
+community:
+  path:
+    upload: d:/SEU/community/data/upload
+    domain: http://localhost:8080
